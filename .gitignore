@@ -1,4 +1,8 @@
+#Terraform
 .terraform/
 *.tfstate
 *.tfstate.backup
 *.tfvars
+
+#Ansible
+ansible/inventory.ini
