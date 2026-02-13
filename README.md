@@ -1,28 +1,47 @@
-# azure-devops-infra
+# Azure DevOps Infrastructure with Terraform & Ansible
 
-# Azure DevOps Infrastructure Project
+This project demonstrates a complete DevOps workflow:
+- **Infrastructure provisioning** on Microsoft Azure using **Terraform**
+- **Server configuration** using **Ansible** over SSH
+- **Version control** with Git and GitHub
 
-This project demonstrates a complete DevOps workflow using Microsoft Azure.
+The goal is to show a clean, repeatable, and secure approach to building and configuring cloud infrastructure.
 
-## 🚀 Overview
-- Infrastructure provisioning with Terraform
-- Configuration management with Ansible
-- CI/CD pipeline using Azure DevOps
-- Monitoring with Azure Log Analytics
+---
 
-## 🏗 Architecture
-The infrastructure consists of:
+## 🧱 Architecture Overview
+
 - Azure Resource Group
-- Virtual Network & Subnet
-- Network Security Group (SSH, HTTP)
-- Two Ubuntu Linux Virtual Machines
-- Log Analytics Workspace
+- Virtual Network + Subnet
+- Network Security Group (SSH + HTTP)
+- Linux Virtual Machine (Ubuntu)
+- SSH key authentication
+- Nginx web server installed and configured with Ansible
 
-## 🛠 Tools & Technologies
-- Azure
-- Terraform
-- Ansible
-- Azure DevOps Pipelines
-- Linux (Ubuntu)
+---
 
-## 📦 Project Structure
+## 🛠️ Tools & Technologies
+
+- **Terraform** – Infrastructure as Code
+- **Ansible** – Configuration Management
+- **Azure** – Cloud provider
+- **Git & GitHub** – Version control
+- **WSL (Ubuntu)** – Ansible execution environment
+- **Linux (Ubuntu VM)**
+
+---
+
+## 📁 Project Structure
+
+```text
+azure-devops-infra/
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── versions.tf
+├── ansible/
+│   └── playbook.yml
+├── pipeline/
+├── .gitignore
+└── README.md
