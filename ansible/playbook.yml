@@ -1,29 +1,7 @@
----
-# Ansible playbook will be added here
 - name: Configure web server
   hosts: web
   become: true
 
-  tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
-
-    - name: Install nginx
-      apt:
-        name: nginx
-        state: present
-
-    - name: Ensure nginx is running
-      service:
-        name: nginx
-        state: started
-        enabled: yes
-
-    - name: Deploy index.html
-      copy:
-        dest: /var/www/html/index.html
-        content: |
-          <h1>Hello from Ansible + Nginx</h1>
-          <p>Provisioned with Terraform, configured with Ansible.</p>
+  roles:
+    - nginx
 

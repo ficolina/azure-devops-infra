@@ -1,0 +1,23 @@
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Deploy index.html
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart nginx
+
+- name: Ensure nginx is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
