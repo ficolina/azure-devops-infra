@@ -1,12 +1,15 @@
+# Update apt package index
 - name: Update apt cache
   apt:
     update_cache: yes
 
+# Ensure nginx package is installed
 - name: Install nginx
   apt:
     name: nginx
     state: present
 
+# Deploy static HTML page to web root
 - name: Deploy index.html
   copy:
     src: index.html
@@ -14,8 +17,9 @@
     owner: root
     group: root
     mode: "0644"
-  notify: Restart nginx
+  notify: Restart nginx   # restart only if file changes - use file main.yml from handles folder
 
+# Ensure nginx service is running and enabled on boot
 - name: Ensure nginx is running
   service:
     name: nginx

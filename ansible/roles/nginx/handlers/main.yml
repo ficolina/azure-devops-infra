@@ -1,3 +1,4 @@
+# restart if change happens
 - name: Restart nginx
   service:
     name: nginx

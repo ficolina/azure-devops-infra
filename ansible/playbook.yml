@@ -1,7 +1,7 @@
 - name: Configure web server
-  hosts: web
-  become: true
+  hosts: web            # hosts from inventory.ini
+  become: true          # use sudo
 
   roles:
-    - nginx
+    - nginx             # nginx role - which execute from C:\Users\Filip\azure-devops-infra\ansible\roles\nginx\tasks\main.yml
 
