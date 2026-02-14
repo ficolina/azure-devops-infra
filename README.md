@@ -64,7 +64,7 @@ Terraform is used to provision all Azure infrastructure resources.
 ### Deploy
 ```bash
 cd terraform
-terraform init
+terraform init -reconfigure -backend-config="dev\backend.hcl"
 terraform plan
 terraform apply
 ```
